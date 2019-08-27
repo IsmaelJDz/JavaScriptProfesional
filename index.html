@@ -23,20 +23,55 @@
     </main>
 
     <script>
-      const video = document.querySelector("video");
-      const button = document.querySelector("button");
+      // const video = document.querySelector("video");
+      // const button = document.querySelector("button");
 
-      function MediaPlayer(config) {
-        this.media = config.el;
-      }
+      // function MediaPlayer(config) {
+      //   this.media = config.el;
+      // }
 
-      MediaPlayer.prototype.Mifunction = function() {
-        !this.media.paused ? this.media.pause() : this.media.play();
-      };
+      // MediaPlayer.prototype.Mifunction = function() {
+      //   !this.media.paused ? this.media.pause() : this.media.play();
+      // };
 
-      const media = new MediaPlayer({ el: video });
+      // const media = new MediaPlayer({ el: video });
 
-      button.onclick = () => media.Mifunction();
+      // button.onclick = () => media.Mifunction();
+
+      // function printNumbers() {
+      //   var i;
+      //   for (i = 0; i < 10; i++) {
+      //     function eventuallyPrintNumber(n) {
+      //       setTimeout(function() {
+      //         console.log(n);
+      //       }, 100);
+      //     }
+      //     eventuallyPrintNumber(i);
+      //   }
+      // }
+
+      // printNumbers();
+
+      var myApp = (function() {
+        var foo = "Module pattern";
+        var bar = "ver 1.0";
+
+        var sum = function(param1, param2) {
+          return param1 + param2;
+        };
+
+        return {
+          myMessage: function() {
+            return foo + "" + bar;
+          },
+          mySum: function(param1, param2) {
+            return sum(param1, param2);
+          }
+        };
+      })();
+
+      console.log(myApp.myMessage());
+      console.log(myApp.mySum(10, 5));
     </script>
   </body>
 </html>
