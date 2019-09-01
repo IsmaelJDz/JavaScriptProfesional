@@ -39,39 +39,47 @@
       // button.onclick = () => media.Mifunction();
 
       // function printNumbers() {
-      //   var i;
-      //   for (i = 0; i < 10; i++) {
-      //     function eventuallyPrintNumber(n) {
-      //       setTimeout(function() {
-      //         console.log(n);
-      //       }, 100);
-      //     }
-      //     eventuallyPrintNumber(i);
+      //   // var i;
+      //   for (let i = 0; i < 10; i++) {
+      //     setTimeout(function() {
+      //       console.log(i);
+      //     }, 100);
       //   }
       // }
 
       // printNumbers();
 
-      var myApp = (function() {
-        var foo = "Module pattern";
-        var bar = "ver 1.0";
+      function makeColorPrinter(color) {
+        let colorMessage = `The color is ${color}`;
 
-        var sum = function(param1, param2) {
-          return param1 + param2;
+        return function() {
+          console.log(colorMessage);
         };
+      }
 
-        return {
-          myMessage: function() {
-            return foo + "" + bar;
-          },
-          mySum: function(param1, param2) {
-            return sum(param1, param2);
-          }
-        };
-      })();
+      var getColorPrinter = makeColorPrinter("verde");
+      console.log(getColorPrinter());
 
-      console.log(myApp.myMessage());
-      console.log(myApp.mySum(10, 5));
+      // var myApp = (function() {
+      //   var foo = "Module pattern";
+      //   var bar = "ver 1.0";
+
+      //   var sum = function(param1, param2) {
+      //     return param1 + param2;
+      //   };
+
+      //   return {
+      //     myMessage: function() {
+      //       return foo + "" + bar;
+      //     },
+      //     mySum: function(param1, param2) {
+      //       return sum(param1, param2);
+      //     }
+      //   };
+      // })();
+
+      // console.log(myApp.myMessage());
+      // console.log(myApp.mySum(10, 5));
     </script>
   </body>
 </html>
