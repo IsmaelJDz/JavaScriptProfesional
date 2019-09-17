@@ -7,7 +7,6 @@ function MediaPlayer(config) {
 
 MediaPlayer.prototype._initPlugins = function() {
   this.plugins.forEach(plugin => {
-    console.log(this);
     plugin.run(this);
   });
 };
@@ -20,7 +19,19 @@ MediaPlayer.prototype.pause = function() {
   this.media.pause();
 };
 
-MediaPlayer.prototype.togglePlay = function() {
+MediaPlayer.prototype.mute = function() {
+  this.media.muted = true;
+};
+
+MediaPlayer.prototype.unmute = function() {
+  this.media.muted = false;
+};
+
+MediaPlayer.prototype.muteAndunMuted = function() {
+  this.media.muted ? (this.media.muted = false) : (this.media.muted = true);
+};
+
+MediaPlayer.prototype.TooglePlay = function() {
   if (this.media.paused) {
     this.play();
   } else {
