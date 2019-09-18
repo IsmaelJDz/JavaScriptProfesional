@@ -23,7 +23,26 @@
       <button id="unMutedButton">UnMuted</button>
     </main>
 
+    <ul>
+      <li><button class="call-to-action">Aprender</button></li>
+      <li><button class="call-to-action">Aprender Más</button></li>
+      <li><button class="call-to-action">!Nunca parar de aprender</button></li>
+    </ul>
+
     <!-- <script type="module" src="./assets/index.js"></script> -->
-    <script src="./assets/ExamThis.js"></script>
+    <!-- <script src="./assets/ExamThis.js"></script> -->
+    <script>
+      const buttons = document.getElementsByClassName("call-to-action");
+      // console.log(buttons);
+      // buttons.forEach(button => {
+      //   button.onclick = () => {
+      //     alert("Nunca pares de aprender");
+      //   };
+      // });
+
+      Array.prototype.forEach.call(buttons, buttonm => {
+        buttonm.onclick = () => alert("Nunca pares de aprender");
+      });
+    </script>
   </body>
 </html>
